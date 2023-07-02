@@ -1,0 +1,17 @@
+# If you build it yourself
+
+dependencies:
+- pip
+- python3
+- PyInstaller
+- colorama
+- wheel
+- twine
+
+# If you use the prebuilt version
+
+dependencies:
+- python3
+- PyInstaller
+- wheel
+- twine
