@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Lato:wght@700&family=Outfit:wght@500&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+.title-1 {
+    text-align: center;
+    font-family: Outfit;
+    font-size: 144px;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.title-2 {
+    text-align: center;
+    font-family: Outfit;
+    font-size: 83px;
+    margin-top: 0px;
+}
+
+.no-dl {
+    text-align: center;
+    font-family: Outfit;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+.os-h2 {
+    text-align: center;
+    padding-top: 30;
+    font-family: Outfit;
+    color: white;
+}
+
+.windows {
+    transition: 1s;
+    background-color: rgb(53, 164, 255);
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100;
+    border-radius: 12px;
+}
+
+.linux { /* Actually, it is called GNU/Linux :nerdface: */
+    transition: 1s;
+    background-color: rgb(221, 65, 252);
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100;
+    border-radius: 12px;
+}
+
+.darwin {
+    transition: 1s;
+    background-color: rgb(240, 57, 57);
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100;
+    border-radius: 12px;
+}
+
+.windows:hover {
+    transition: 1s;
+    background-color: rgb(17, 117, 233);
+}
+
+.linux:hover {
+    transition: 1s;
+    background-color: rgb(170, 1, 192);
+}
+
+.darwin:hover {
+    transition: 1s;
+    background-color: rgb(194, 1, 1);
+}
+
+.footer {
+    background-color: rgb(56, 56, 56);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+  
+.license {
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    font-family: Outfit;
+}
