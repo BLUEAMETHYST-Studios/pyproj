@@ -40,6 +40,4 @@ To release your package:
 
 $ make release
 
-
-
 """)

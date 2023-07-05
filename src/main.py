@@ -16,20 +16,23 @@ def mkDir():
         print("Set the 4th argument to the name of your project.")
         kill()
 
-if "help" in argv:
+if "--help" or "-h" in argv:
     from help import pyproj_help
     pyproj_help()
+
+if "--version" or "-v" in argv:
+    print("Pyproj Version Beta 1.0.0")
 
 if argv[1] == "new":
     try:
         if argv[2] == "default":
-            from new.newdir import *
+            from newdir import *
             mkDir()
-            from new.default import *
+            from new_app import *
         elif argv[2] == "package":
-            from new.newdir import *
+            from newdir import *
             mkDir()
-            from new.package import *
+            from new_package import *
             newPackage()
         else:
             print(f"{Fore.RED}[ERROR] Not enough arguments!{Fore.RESET}")
@@ -43,6 +46,9 @@ if argv[1] == "new":
         if input('Enter "x" to view the reason: ') == "x":
             print(x)
         kill()
+elif argv[1] == "build":
+    from outjson import *
+    parse_and_make()
 
 
 

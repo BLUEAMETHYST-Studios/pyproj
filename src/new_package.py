@@ -67,7 +67,7 @@ setup (
     open(f"{pkgName}/__init__.py", "w").write("# This is the main file for your package.")
     open(".gitignore", "w").write(f"/dist\n/{pkgName}.egg-info\n/build\n__pycache__")
     open(".gitattributes", "w").write("* text=auto")
-    open("README.md", "w").write("")
+    open("README.md", "w").write(f"# {pkgName}\n{pkgDesc}")
     open("setup.py", "w").write(setuppy)
     if system() == "Linux":
         print(f"Detected Operating System {Fore.CYAN}Linux{Fore.RESET}, creating Makefile ...")
