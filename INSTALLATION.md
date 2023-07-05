@@ -24,6 +24,8 @@ Set-ExecutionPolicy unrestricted
 # Installation - GNU/Linux
 
 
+**(Might work on MacOS, but not confirmed)**
+
 ## Building it yourself
 
 **THE ENTIRE BUILDING PROCESS WILL BE DONE WITHIN A TERMINAL**
@@ -48,5 +50,5 @@ git clone https://github.com/BLUEAMETHYST-Studios/pyproj.git
 
 ```sh
 make build
-make install
+sudo make install
 ```
