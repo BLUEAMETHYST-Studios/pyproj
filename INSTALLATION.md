@@ -1,5 +1,8 @@
 # Installation - Windows
 
+## The fast way (but not the most reliable one)
+
+Read the [QUICK_INSTALL.md](https://github.com/BLUEAMETHYST-Studios/pyproj/blob/main/QUICK_INSTALL.md) file to get a single command, which downloads, builds and installs Pyproj.
 
 ## Building it yourself
 
