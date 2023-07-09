@@ -1,0 +1,24 @@
+{
+    "general": {
+        "main-executable":"main.py",
+        "out-name":"pyproj",
+        "console-application":true,
+        "onefile":true,
+        "only-ascii":false,
+        "clean-cache":false
+    },
+
+    "windows-osx-specific": {
+        "disable-windowed-traceback":false
+    },
+
+    "windows-specific": {
+        "prompt-uac":false
+    },
+
+    "osx-specific": {
+        "argv-emulation":false
+    },
+
+    "custom-arguments":[]
+}

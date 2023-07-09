@@ -10,8 +10,8 @@ def newdir(name):
         mkdir(name)
         chdir(name)
     except FileExistsError:
-        print(f"{Fore.RED}[ERROR] Folder with the name {name} already exists!{Fore.RESET}")
+        print(f"[❌] {Fore.RED}Folder with the name {name} already exists!{Fore.RESET}")
         kill()
     except Exception:
-        print(f"{Fore.RED}[ERROR] Folder can't be created!{Fore.RESET}")
+        print(f"[❌] {Fore.RED}Folder can't be created!{Fore.RESET}")
         kill()

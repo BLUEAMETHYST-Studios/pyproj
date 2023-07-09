@@ -59,16 +59,32 @@ setup (
         start = time()
         mkdir(pkgName)
     except FileExistsError:
-        print(f"{Fore.RED}[ERROR] Directory with name {pkgName} already exists!{Fore.RESET}")
+        print(f"[❌] {Fore.RED}Directory with name {pkgName} already exists!{Fore.RESET}")
         kill()
     except Exception:
-        print(f"{Fore.RED}[ERROR] Can't create package!{Fore.RESET}")
+        print(f"[❌] {Fore.RED}Can't create package!{Fore.RESET}")
         kill()
-    open(f"{pkgName}/__init__.py", "w").write("# This is the main file for your package.")
-    open(".gitignore", "w").write(f"/dist\n/{pkgName}.egg-info\n/build\n__pycache__")
-    open(".gitattributes", "w").write("* text=auto")
-    open("README.md", "w").write(f"# {pkgName}\n{pkgDesc}")
-    open("setup.py", "w").write(setuppy)
+
+    initpy = open(f"{pkgName}/__init__.py", "w")
+    initpy.write("# This is the main file for your package.")
+    initpy.close()
+
+    giti = open(".gitignore", "w")
+    giti.write(f"/dist\n/{pkgName}.egg-info\n/build\n__pycache__")
+    giti.close()
+
+    gita = open(".gitattributes", "w")
+    gita.write("* text=auto")
+    gita.close()
+
+    readme = open("README.md", "w")
+    readme.write(f"# {pkgName}\n{pkgDesc}")
+    readme.close()
+
+    setuppyfile = open("setup.py", "w")
+    setuppyfile.write(setuppy)
+    setuppyfile.close()
+    
     if system() == "Linux":
         print(f"Detected Operating System {Fore.CYAN}Linux{Fore.RESET}, creating Makefile ...")
         open("Makefile", "w").write(makefile)
@@ -79,6 +95,6 @@ setup (
         print(f"Detected Operating System {Fore.CYAN}Windows{Fore.RESET}, creating Batchfile ...")
         open("pyproj-make.bat", "w").write(batchfile)
     else:
-        print("Was not able to detect system, no file for automation will be created.")
+        print("[❌] Was not able to detect system, no file for automation will be created.")
     
-    print(f"Package-creation process completed within {time() - start:.2f} seconds!")
+    print(f"[✅] Package-creation process {Fore.GREEN}completed{Fore.RESET} within {Fore.CYAN}{time() - start:.2f}{Fore.RESET} seconds!")
