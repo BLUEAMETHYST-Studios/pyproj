@@ -45,4 +45,10 @@ if argv[1] == "new":
         kill()
 elif argv[1] == "build":
     from outjson_main import *
-    
+elif argv[1] == "package":
+    if argv[2] == "build":
+        from package_build import *
+    elif argv[2] == "release":
+        from package_release import *
+    else:
+        print(f"[❌] {Fore.RED}This package managing function does not exist!{Fore.RESET}")

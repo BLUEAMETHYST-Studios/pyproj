@@ -4,30 +4,7 @@ from colorama import Fore
 from platform import system
 from time import time
 
-makefile = """# Pyproj Package Packaging Makefile
-build:
-    python3 setup.py sdist bdist_wheel
-release:
-    twine upload dist/*
-"""
-
-batchfile = """:: Pyproj Package Packaging Batchfile
-if %1 == build goto build
-if %1 == release goto release
-if NOT %1 == build goto exit
-if NOT %1 == release goto exit
-
-:build
-python setup.py sdist bdist_wheel
-exit
-
-:release
-twine upload dist/*
-exit
-
-:exit
-exit
-"""
+from secrettemplate import *
 
 def newPackage():
     try:
@@ -70,12 +47,18 @@ setup (
     initpy.close()
 
     giti = open(".gitignore", "w")
-    giti.write(f"/dist\n/{pkgName}.egg-info\n/build\n__pycache__")
+    giti.write(f"/dist\n/{pkgName}.egg-info\n/build\n__pycache__\n/secrets.json")
     giti.close()
 
     gita = open(".gitattributes", "w")
     gita.write("* text=auto")
     gita.close()
+
+    print("Creating a new secrets.json file ...")
+    new_secrets = open("secrets.json", "w")
+    new_secrets.write(secrettemplate)
+    new_secrets.close()
+    print("(i) Be sure to enter the correct PyPi account credentials in the secrets.json file, so that you can release your package.")
 
     readme = open("README.md", "w")
     readme.write(f"# {pkgName}\n{pkgDesc}")
@@ -84,17 +67,5 @@ setup (
     setuppyfile = open("setup.py", "w")
     setuppyfile.write(setuppy)
     setuppyfile.close()
-    
-    if system() == "Linux":
-        print(f"Detected Operating System {Fore.CYAN}Linux{Fore.RESET}, creating Makefile ...")
-        open("Makefile", "w").write(makefile)
-    elif system() == "Darwin":
-        print(f"Detected Operating System {Fore.CYAN}Darwin{Fore.RESET}, creating Makefile ...")
-        open("Makefile", "w").write(makefile)
-    elif system() == "Windows":
-        print(f"Detected Operating System {Fore.CYAN}Windows{Fore.RESET}, creating Batchfile ...")
-        open("pyproj-make.bat", "w").write(batchfile)
-    else:
-        print("[❌] Was not able to detect system, no file for automation will be created.")
     
     print(f"[✅] Package-creation process {Fore.GREEN}completed{Fore.RESET} within {Fore.CYAN}{time() - start:.2f}{Fore.RESET} seconds!")
