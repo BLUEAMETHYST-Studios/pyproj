@@ -31,6 +31,9 @@ def parsejson(json):
     if j["osx-specific"]["argv-emulation"]:
         args.append("--argv-emulation")
 
+    for carg in j["custom-arguments"]:
+        args.append(carg)
+
     args.append(j["general"]["main-executable"])
 
     return args
