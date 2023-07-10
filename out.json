@@ -1,6 +1,6 @@
 {
     "general": {
-        "main-executable":"main.py",
+        "main-executable":"src/main.py",
         "out-name":"pyproj",
         "console-application":true,
         "onefile":true,
